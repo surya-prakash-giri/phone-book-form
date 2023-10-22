@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import "./App.css";
+import { PhoneBookForm } from "./components/PhoneBookForm/PhoneBookForm";
+import { InformationTable } from "./components/InformationTable/InformationTable";
 
 function App() {
+  const [contacts, setContacts] = useState([]);
+
+  const addContact = (newContact) => {
+    const updatedContacts = [...contacts, newContact];
+    setContacts(updatedContacts);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <PhoneBookForm addEntryToPhoneBook={addContact}/>
+      <InformationTable contacts={contacts}/>
+    </section>
   );
 }
 

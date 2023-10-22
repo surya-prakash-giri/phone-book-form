@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    margin: 5px;
+}
+
+thead {
+    background-color: #75c1f1;
+}
+
+tbody {
+    background-color: bisque;
+}
+
+tr:hover {
+    background-color: rgb(250, 171, 74);
+}
+
+th, td {
+    border: 1px solid gray;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.table-cell {
+    min-width: 150px;
+}
+
+.informationTable {
+    width: max-content;
+}
